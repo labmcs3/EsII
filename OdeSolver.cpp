@@ -1,7 +1,7 @@
 #include "Vector3.h"
 #include "OdeSolver.h"
 
-void OdeSolver::SetMatPoint(MatPoint tmp){
+void OdeSolver::AddMatPoint(MatPoint tmp){
   m_p.push_back(tmp);
 }
 
