@@ -19,11 +19,13 @@ using namespace std;
 
 Vector3 fInternal(unsigned int i,unsigned int j, double t, vector<MatPoint> p){
   //STEP 2 definizione forza interna
+  // * ritorna la forza interna che il corpo j esercita su i
   return Vector3();
 }
 
 Vector3 fExternal(unsigned int i, double t, vector<MatPoint> p){
   //STEP 2 definizione forza esterna
+  // * ritorna la forza esterna sul corpo i
   return Vector3();
 }
 
@@ -36,14 +38,16 @@ int main(){
   double mass;
   double x,y,z,vx,vy,vz;
   ifstream f("fileInput");
+
+  // STEP 1 - opzione 1
+  // * Creazione OdeSolver vuoto (senza passare vector<MatPoint>);
+  // * Assegnazione dei MatPoint con il metodo AddMatPoint
+  // STEP 1 - opzione 2
+  // * Creazione e riempimento vector<MatPoint>
+  // * Creazione di OdeSolver passando vector<MatPoint>
   while (f >> mass >> vx >> x >> vy >> y >> vz >> z){
     //...
   }
-
-  // OdeSolver ode(...);
-  // STEP 1 creazione dell'oggetto della classe OdeSolver
-  //   - creazione oggetto OdeSolver vuoto, assegnazione con il metodo Punto
-  //   - creazione di vector<MatPoint> e poi creazione di OdelSover
 
   // Creazione classe OdeSolver (per la soluzione dell'equ. diff.)
   ode.fInternal = fInternal;
@@ -73,8 +77,13 @@ int main(){
     ode.Solve();
     for (unsigned int i=0;i<ode.N();i++){
       //STEP 4 riempimento delle grafico gr[i] con le coordinate aggiornate dei pianeti
+      // * accedere al MatPoint i-esimo
+      // * accedere al vettore di coordinate spaziali
+      // * inserire nel grafico gr[i] le coordinate X e Y
+      // N.B. L'indice del nuovo punto da inserire è pari al numero di punti già presente in ciascun grafico
     } 
     gPad->Modified(); gPad->Update();
+    gSystem->ProcessEvents();
   }
 
   app.Run(true);

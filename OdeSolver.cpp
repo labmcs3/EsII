@@ -36,6 +36,9 @@ double OdeSolver::Step(){
 
 Vector3 OdeSolver::m_eqDiff(unsigned int i, double t, vector<MatPoint> p){
   //STEP 3 Calcolo dell'accelerazione dovuta a forze interne e forze esterne
+  // * Sommo le forze interne dovute a tutti i MatPoint con indice j diverso da i
+  // * Sommo la forza esterna su i
+  // * Ritorno l'accelerazione
   return Vector3();
 }
 
@@ -57,6 +60,9 @@ void OdeSolver::Solve(){
 
   } else if (m_method=="Rk2"){
     // STEP 5 implementare Runge Kutta al secondo ordine
+    // * Riprendere il calcolo di k1/w1
+    // * Per il calcolo di k2/w2 devo dotarmi di una copia di m_p
+    //   calcolata nel punto intermedio dell'intervallo
   }
   m_t += m_h;
 
