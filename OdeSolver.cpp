@@ -25,16 +25,16 @@ double OdeSolver::T(){
   return      m_t;
 }
 
-void OdeSolver::Step(double h){
+void OdeSolver::DeltaT(double h){
   m_h = h;
 }
 
-double OdeSolver::Step(){
+double OdeSolver::DeltaT(){
   return   m_h;
 }
 
 
-Vector3 OdeSolver::m_eqDiff(unsigned int i, double t, vector<MatPoint> p){
+Vector3 OdeSolver::m_A(unsigned int i, double t, vector<MatPoint> p){
   //STEP 3 Calcolo dell'accelerazione dovuta a forze interne e forze esterne
   // * Sommo le forze interne dovute a tutti i MatPoint con indice j diverso da i
   // * Sommo la forza esterna su i
@@ -43,14 +43,14 @@ Vector3 OdeSolver::m_eqDiff(unsigned int i, double t, vector<MatPoint> p){
 }
 
 //Da implementare a cura dello studente
-void OdeSolver::Solve(){
+void OdeSolver::Step(){
 
   if (m_method=="Eulero"){
     vector<Vector3>  k1(m_p.size());
     vector<Vector3>  w1(m_p.size());
     for (unsigned int i=0;i<m_p.size();i++){
       k1[i] = m_h*m_p[i].V();
-      w1[i] = m_h*m_eqDiff(i,m_t,m_p);
+      w1[i] = m_h*m_A(i,m_t,m_p);
     }
 
     for (unsigned int i=0;i<m_p.size();i++){
@@ -62,7 +62,7 @@ void OdeSolver::Solve(){
     // STEP 5 implementare Runge Kutta al secondo ordine
     // * Riprendere il calcolo di k1/w1
     // * Per il calcolo di k2/w2 devo dotarmi di una copia di m_p
-    //   calcolata nel punto intermedio dell'intervallo
+    //   calcolata nel punto intermedio dell'intervallo temporale
   }
   m_t += m_h;
 

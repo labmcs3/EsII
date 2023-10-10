@@ -13,19 +13,19 @@ class OdeSolver{
   void             AddMatPoint(MatPoint tmp);
   MatPoint         GetMatPoint(unsigned int i);
   vector<MatPoint> GetMatPoints();
-  unsigned int   N();
-  void           T(double t0);
-  double         T();
-  void           Step(double h);
-  double         Step();
-  void           Solve();
+  unsigned int     N();
+  void             T(double t0);
+  double           T();
+  void             DeltaT(double h);
+  double           DeltaT();
+  void             Step();
   std::function < Vector3(unsigned int i,unsigned int j, double t, vector<MatPoint> p) > fInternal;
   std::function < Vector3(unsigned int i,double t, vector<MatPoint> p) >        fExternal;
  private:
   string   m_method;
   vector<MatPoint> m_p;
   double   m_t,m_h; 
-  Vector3  m_eqDiff(unsigned int i, double t, vector<MatPoint>);
+  Vector3  m_A(unsigned int i, double t, vector<MatPoint>);
 };
 
 

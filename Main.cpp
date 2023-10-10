@@ -77,8 +77,7 @@ int main(){
     ode.Solve();
     for (unsigned int i=0;i<ode.N();i++){
       //STEP 4 riempimento delle grafico gr[i] con le coordinate aggiornate dei pianeti
-      // * accedere al MatPoint i-esimo
-      // * accedere al vettore di coordinate spaziali
+      // * accedere al MatPoint i-esimo, al vettore di coordinate spaziali, alla coordinata voluta
       // * inserire nel grafico gr[i] le coordinate X e Y
       // N.B. L'indice del nuovo punto da inserire è pari al numero di punti già presente in ciascun grafico
     } 
