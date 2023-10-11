@@ -9,7 +9,7 @@
 #include <TH2D.h>
 #include <TApplication.h>
 #include <TStyle.h>
-
+#include <TSystem.h>
 
 #include "OdeSolver.h"
 #include "Vector3.h"
@@ -52,7 +52,7 @@ int main(){
   // Creazione classe OdeSolver (per la soluzione dell'equ. diff.)
   ode.fInternal = fInternal;
   ode.fExternal = fExternal;
-  ode.Step(0.5);
+  ode.DeltaT(0.5);
 
   
   //Creazione dei grafici (uno per pianeta)
@@ -74,7 +74,7 @@ int main(){
 
   //Run del metodo numerico + grafico in tempo reale delle coordinate e del mom. angolare totale
   while (ode.T()<365){
-    ode.Solve();
+    ode.Step();
     for (unsigned int i=0;i<ode.N();i++){
       //STEP 4 riempimento delle grafico gr[i] con le coordinate aggiornate dei pianeti
       // * accedere al MatPoint i-esimo, al vettore di coordinate spaziali, alla coordinata voluta
