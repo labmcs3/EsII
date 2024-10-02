@@ -37,7 +37,7 @@ int main(){
   //Lettura dei dati dal file
   double mass;
   double x,y,z,vx,vy,vz;
-  ifstream f("fileInput");
+  ifstream f("fileInput.dat");
 
   // STEP 1 - opzione 1
   // * Creazione OdeSolver vuoto (senza passare vector<MatPoint>);
