@@ -11,7 +11,7 @@
   g_p, m/s^2  (polar)      = 9.8321863685      outer core    = 1.835 x 10^24 kg
   g_e, m/s^2  (equatorial) = 9.7803267715      inner core    = 9.675 x 10^22 kg
   g_o, m/s^2               = 9.82022         Fluid core rad  = 3480 km
-  GM, km^3/s^2             = 398600.435436   Inner core rad  = 1215 km
+  GM (km^3/s^2)            = 398600.435436   Inner core rad  = 1215 km
   GM 1-sigma, km^3/s^2     =      0.0014     Escape velocity = 11.186 km/s
   Rot. Rate (rad/s)        = 0.00007292115   Surface area:
   Mean sidereal day, hr    = 23.9344695944     land          = 1.48 x 10^8 km

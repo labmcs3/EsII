@@ -2,7 +2,7 @@
  Revised: July 31, 2013                  Sun                                 10
 
  PHYSICAL PROPERTIES (updated 2024-Mar-04):
-  GM, km^3/s^2          = 132712440041.93938  Mass, 10^24 kg        = ~1988500
+  GM (km^3/s^2)         = 132712440041.93938  Mass, 10^24 kg        = ~1988500
   Vol. mean radius, km  = 695700              Volume, 10^12 km^3    = 1412000
   Solar radius (IAU2015)= 695700 km           Mean density, g/cm^3  = 1.408
   Radius (photosphere)  = 696500 km           Angular diam at 1 AU  = 1919.3"
