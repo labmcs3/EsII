@@ -2,6 +2,7 @@
 #define _ODESOLVER
 
 #include <vector>
+#include <functional>
 #include "Vector3.h"
 #include "MatPoint.h"
 
