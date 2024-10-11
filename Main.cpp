@@ -17,13 +17,13 @@
 
 using namespace std;
 
-Vector3 fInternal(unsigned int i,unsigned int j, double t, vector<MatPoint> p){
+Vector3 ForzaInterna(unsigned int i,unsigned int j, double t, vector<MatPoint> p){
   //STEP 2 definizione forza interna
   // * ritorna la forza interna che il corpo j esercita su i
   return Vector3();
 }
 
-Vector3 fExternal(unsigned int i, double t, vector<MatPoint> p){
+Vector3 ForzaEsterna(unsigned int i, double t, vector<MatPoint> p){
   //STEP 2 definizione forza esterna
   // * ritorna la forza esterna sul corpo i
   return Vector3();
@@ -51,9 +51,9 @@ int main(){
 
   // Creazione classe OdeSolver (per la soluzione dell'equ. diff.)
   double giorno = 86400; // giorno in secondi
-  ode.fInternal = fInternal;
-  ode.fExternal = fExternal;
-  ode.DeltaT(0.5);
+  ode.fInternal = ForzaInterna;
+  ode.fExternal = ForzaEsterna;
+  ode.DeltaT(0.5*giorno);
 
   
   //Creazione dei grafici (uno per pianeta)
